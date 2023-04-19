@@ -1,6 +1,7 @@
 .weapons-page {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   background-color: #222222;
   min-height: 100vh;
@@ -12,4 +13,11 @@
 h2 {
   font-family: 'Noto Serif', serif;
   color: #999999;
+}
+
+.weapon-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
