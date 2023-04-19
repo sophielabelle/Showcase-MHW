@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { RandomArmorSet } from "./RandomArmorSet/RandomArmorSet";
+import React from "react";
+import { RandomWeapon } from "./RandomWeapon/RandomWeapon";
 import "./HomePage.css";
 
-export const HomePage = ({randomArmor}) => {
+export const HomePage = ({weapon}) => {
 
   return (
     <section className="home-page">
@@ -10,7 +10,7 @@ export const HomePage = ({randomArmor}) => {
         <h2>Thanks for Stopping by!</h2>
         <p>Welcome I created this site in order to provide you a space to learn and keep track of all the armors that are availabel within Monster Hunter World. You can reasearch armors you are interested in, search through all of them and maybe eventually save them. Have a look around and keep on playing.</p>
       </div>
-      <RandomArmorSet randomArmor={randomArmor}/>
+      <RandomWeapon weapon={weapon}/>
     </section>
   )
 }

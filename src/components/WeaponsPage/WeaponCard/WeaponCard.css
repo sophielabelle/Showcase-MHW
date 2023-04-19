@@ -1,4 +1,4 @@
-.armor-card {
+.weapon-card {
   border: 2px solid #e4d285;
   background-color: #222222;
   box-shadow: 2px 2px 5px black;
@@ -7,7 +7,7 @@
   margin: 10px;
 }
 
-.armor-name {
+.weapon-name {
   font-family: 'Noto Serif', serif;
   color: #999999;
   font-size: larger;
