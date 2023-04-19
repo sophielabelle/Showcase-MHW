@@ -1,9 +1,14 @@
 .armor-card {
   border: 2px solid #e4d285;
+  background-color: #222222;
+  box-shadow: 2px 2px 5px black;
   height: 100px;
-  width: 100%;
+  width: 99%;
+  margin: 10px;
+  
 }
 
 .armor-name {
-  color: Black;
+  color: white;
+  font-size: larger;
 }
