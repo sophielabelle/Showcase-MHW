@@ -11,16 +11,20 @@ export const App = () => {
   const [randomWeapon, setRandomWeapon] = useState({});
   const [allWeapons, setAllWeapons] = useState([]);
   const [selectedWeapon, setSelectedWeapon] = useState({});
+  // const [loading, setLoading] = useState(true)
 
-
+  const randomNum = () => {
+    return Math.floor(Math.random() * (1000 - 1 + 1) + 1)
+  }
+  
   const fetchRandomWeapon = () => {
-    // make function that randomizes numbers 1- x and inputs as the id num
-    fetchData(`weapons/1`)
+    const rndInt = randomNum();
+    fetchData(`weapons/${rndInt}`)
       .then(data => {
-        setRandomWeapon(data)
+        setRandomWeapon(data);
       })
       .catch(err => {
-        console.log('error',err.message)
+        console.log('error',err.message);
       })
   }
 
