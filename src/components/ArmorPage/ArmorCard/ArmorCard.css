@@ -5,10 +5,10 @@
   height: 100px;
   width: 99%;
   margin: 10px;
-  
 }
 
 .armor-name {
-  color: white;
+  font-family: 'Noto Serif', serif;
+  color: #999999;
   font-size: larger;
 }

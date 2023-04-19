@@ -4,11 +4,11 @@ import "./ArmorPage.css";
 
 export const ArmorPage = ({allArmors}) => {
   console.log(allArmors)
-  // console.log(allArmors[0].name)
-  const cards = allArmors.map(armor => <ArmorCard key={armor.name} armor={armor}/>)
+  const cards = allArmors.map(armor => <ArmorCard key={armor['name']} armor={armor} />)
 
   return (
     <section className="armor-page">
+      <h2>All MHW Armors</h2>
       {cards}
     </section>
   )
