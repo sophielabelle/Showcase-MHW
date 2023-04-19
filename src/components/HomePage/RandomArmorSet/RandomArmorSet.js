@@ -5,7 +5,7 @@ export const RandomArmorSet = ({ randomArmor}) => {
 
   return (
     <div className="random-armor">
-      <image src={randomArmor}/>
+      <img src={randomArmor} />
       <p>random goes here</p>
     </div>
   )

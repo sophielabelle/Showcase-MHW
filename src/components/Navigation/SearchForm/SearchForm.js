@@ -8,8 +8,8 @@ export const SearchForm = () => {
         className="search-bard"
         type="text"
         placeholder="search armor..."
-        value=""
-        onChange=""
+        // value=""
+        // onChange=""
       />
     </form>
   )
