@@ -1,0 +1,7 @@
+.random-armor {
+  border: 2px solid rgb(255, 179, 0);
+  border-radius: 0 20px 0 20px;
+  padding: 5px;
+  height: 50%;
+  width: 300px;
+}
