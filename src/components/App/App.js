@@ -1,17 +1,37 @@
 import React, { useState, useEffect } from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
 import { HomePage } from "../HomePage/HomePage";
 import { Navigation } from "../Navigation/Navigation";
-import "./App.css";
+import { WeaponsPage } from "../WeaponsPage/WeaponsPage";
+import { SingleWeapon } from "../SingleWeapon/SingleWeapon";
 import { fetchData } from "../../data/apiCalls";
+import "./App.css";
 
 export const App = () => {
-  const [randomSet, setRandomSet] = useState('')
+  const [randomWeapon, setRandomWeapon] = useState({});
+  const [allWeapons, setAllWeapons] = useState([]);
+  const [selectedWeapon, setSelectedWeapon] = useState({});
+  // const [loading, setLoading] = useState(true)
 
-  const fetchRandomArmor = () => {
-    fetchData('armor/sets/10')
+  const randomNum = () => {
+    return Math.floor(Math.random() * (1000 - 1 + 1) + 1)
+  }
+  
+  const fetchRandomWeapon = () => {
+    const rndInt = randomNum();
+    fetchData(`weapons/${rndInt}`)
       .then(data => {
-        console.log(data.pieces[0].assets.imageFemale)
-        setRandomSet(data.pieces[0].assets.imageFemale)
+        setRandomWeapon(data);
+      })
+      .catch(err => {
+        console.log('error',err.message);
+      })
+  }
+
+  const fetchAllWeapons = () => {
+    fetchData('weapons')
+      .then(data => {
+        setAllWeapons(data)
       })
       .catch(err => {
         console.log('error',err.message)
@@ -19,15 +39,22 @@ export const App = () => {
   }
 
   useEffect(() => {
-    if(!randomSet) {
-      fetchRandomArmor()
-    }
-  }, [randomSet])
+    fetchRandomWeapon()
+  }, [])
+
+  useEffect(() => {
+    fetchAllWeapons()
+  }, [])
 
   return (
     <main className="App">
       <Navigation />
-      <HomePage randomArmor={randomSet} />
+      <Switch>
+        <Route exact path="/all-weapons/weapon/:id" render={({match}) => <SingleWeapon key={match.params.selectedWeapon} id={match.params.selectedWeapon} selected={selectedWeapon}/>} />
+        <Route path="/all-weapons" render={() => <WeaponsPage allWeapons={allWeapons} setSelected={setSelectedWeapon}/> } />
+        <Route path="/" render={() => <HomePage weapon={randomWeapon} /> } />
+        <Redirect from="*" to="/" />
+      </Switch>
     </main>
   )
 }
