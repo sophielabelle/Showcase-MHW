@@ -3,14 +3,9 @@ import { Link } from "react-router-dom";
 import "./WeaponCard.css";
 
 export const WeaponCard = ({weapon, setSelected}) => {
-  let icon;
-  if(weapon.assets === null) {
-    icon = null
-  } else {
-    icon = weapon.assets.icon
-  }
+  const icon = weapon.assets === null ? null : weapon.assets.icon
   const id = weapon.id
-  console.log(weapon)
+
   return (
     <div className="weapon-card">
       <img className="icon" src={icon} alt={weapon.name}/>

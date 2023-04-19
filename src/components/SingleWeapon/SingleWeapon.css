@@ -10,5 +10,39 @@
 }
 
 .selected-img {
-  height: 30vh;
+  height: 35vh;
+}
+
+.durability {
+  width: 300px;
+  height: 30px;
+  border: 2px solid #222222;
+}
+
+.color-1 {
+background-color: #be3843;
+}
+
+.color-2 {
+  background-color: #d3673d;
+}
+
+.color-3 {
+  background-color: #c9b232;
+}
+
+.color-4 {
+  background-color: #81b034;
+}
+
+.color-5 {
+  background-color: #3b58d7;
+}
+
+.color-6 {
+  background-color: white;
+}
+
+.color-7 {
+  background-color: rgb(159, 0, 159);
 }
