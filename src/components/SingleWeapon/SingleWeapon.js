@@ -3,10 +3,6 @@ import "./SingleWeapon.css";
 
 export const SingleWeapon = ({selected}) => {
   console.log(selected.durability)
-  // "id": 1,
-  // "name": "Buster Sword 1",
-  // "type": "great-sword",
-  // "rarity": 1,
   // "attack": {...},
   // "elderseal": null,
   // "attributes": {...},
@@ -28,6 +24,7 @@ export const SingleWeapon = ({selected}) => {
     <section className="single-weapon">
       <h2>{selected.name}</h2>
       <img className="selected-img" src={selected.assets.image}/>
+      <p>Type : {selected.type} | Rarity : {selected.rarity}</p>
       <table className="durability">
         <tr>
           <td className="color-1" style={{width: `${color1}px`}}></td>
@@ -39,6 +36,9 @@ export const SingleWeapon = ({selected}) => {
           <td className="color-7" style={{width: `${color7}px`}}></td>
         </tr>
       </table>
+      <div>
+        <p>Attack stats: Display {selected.attack.display}, Raw {selected.attack.raw} </p>
+      </div>
     </section>
   )
 }
