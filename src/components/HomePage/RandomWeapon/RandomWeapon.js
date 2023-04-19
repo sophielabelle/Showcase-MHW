@@ -2,10 +2,11 @@ import React from "react";
 import "./RandomWeapon.css";
 
 export const RandomWeapon = ({weapon}) => {
-  // const url = weapon.assets.image
+  console.log(weapon)
+ const display = weapon.id ? <img src={weapon.assets.image} /> : <p>loading...</p>
   return (
     <div className="random-weapon">
-      {/* <img src={url} /> */}
+      {display}
       <p>random goes here</p>
     </div>
   )
