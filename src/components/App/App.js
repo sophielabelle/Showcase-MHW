@@ -12,9 +12,6 @@ export const App = () => {
   const [allWeapons, setAllWeapons] = useState([]);
   const [selectedWeapon, setSelectedWeapon] = useState({});
 
-  const viewWeapon = (event) => {
-    console.log(event)
-  }
 
   const fetchRandomWeapon = () => {
     // make function that randomizes numbers 1- x and inputs as the id num
@@ -30,7 +27,6 @@ export const App = () => {
   const fetchAllWeapons = () => {
     fetchData('weapons')
       .then(data => {
-        console.log(data)
         setAllWeapons(data)
       })
       .catch(err => {
@@ -50,8 +46,8 @@ export const App = () => {
     <main className="App">
       <Navigation />
       <Switch>
-        <Route path="/all-weapons" render={() => <WeaponsPage allWeapons={allWeapons} viewWeapon={viewWeapon}/> } />
-        <Route exact path="/all-weapons/:weapon" render={({match}) => <SingleWeapon chosenWeapon={match.params.weapon} />} />
+        <Route exact path="/all-weapons/weapon/:id" render={({match}) => <SingleWeapon key={match.params.selectedWeapon} id={match.params.selectedWeapon} selected={selectedWeapon}/>} />
+        <Route path="/all-weapons" render={() => <WeaponsPage allWeapons={allWeapons} setSelected={setSelectedWeapon}/> } />
         <Route path="/" render={() => <HomePage weapon={randomWeapon} /> } />
         <Redirect from="*" to="/" />
       </Switch>
