@@ -1,8 +1,8 @@
 .weapons-page {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
+  row-gap: 30px;
   background-color: #222222;
   min-height: 100vh;
   margin: 30px;
@@ -15,9 +15,9 @@ h2 {
   color: #999999;
 }
 
-.weapon-cards {
+.weapon-types {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
+  row-gap: 30px;
 }
