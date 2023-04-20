@@ -3,10 +3,10 @@ import { SearchForm } from "./SearchForm/SearchForm";
 import { NavLink } from "react-router-dom";
 import "./Navigation.css"
 
-export const Navigation = () => {
+export const Navigation = ({allWeapons, setSearchResults}) => {
   return (
     <nav>
-      <SearchForm />
+      <SearchForm allWeapons={allWeapons} setSearchResults={setSearchResults}/>
       <NavLink to="/" style={{ textDecoration: 'none', color: 'white' }}>
         <h1>Monster Hunter World Weapon Wiki</h1>
       </NavLink>

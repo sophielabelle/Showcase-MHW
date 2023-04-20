@@ -11,6 +11,7 @@ export const App = () => {
   const [randomWeapon, setRandomWeapon] = useState({});
   const [allWeapons, setAllWeapons] = useState([]);
   const [selectedWeapon, setSelectedWeapon] = useState({});
+  const [searchResults, setSearchResults] = useState([]);
   // const [loading, setLoading] = useState(true)
 
   const randomNum = (array) => {
@@ -36,10 +37,10 @@ export const App = () => {
 
   return (
     <main className="App">
-      <Navigation />
+      <Navigation allWeapons={allWeapons} setSearchResults={setSearchResults}/>
       <Switch>
         <Route exact path="/all-weapons/weapon/:id" render={({match}) => <SingleWeapon key={match.params.selectedWeapon} id={match.params.selectedWeapon} selected={selectedWeapon}/>} />
-        <Route path="/all-weapons" render={() => <WeaponsPage allWeapons={allWeapons} setSelected={setSelectedWeapon}/> } />
+        <Route path="/all-weapons" render={() => <WeaponsPage allWeapons={allWeapons} searchResults={searchResults} setSelected={setSelectedWeapon}/> } />
         <Route path="/" render={() => <HomePage weapon={randomWeapon} /> } />
         <Redirect from="*" to="/" />
       </Switch>
