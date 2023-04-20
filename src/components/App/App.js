@@ -28,7 +28,6 @@ export const App = () => {
       .catch(err => {
         console.log('error',err.message)
       })
-    
   }
 
   useEffect(() => {
@@ -40,9 +39,9 @@ export const App = () => {
       <Navigation allWeapons={allWeapons} setSearchResults={setSearchResults}/>
       <Switch>
         <Route exact path="/all-weapons/weapon/:id" render={({match}) => <SingleWeapon key={match.params.selectedWeapon} id={match.params.selectedWeapon} selected={selectedWeapon}/>} />
-        <Route path="/all-weapons" render={() => <WeaponsPage allWeapons={allWeapons} searchResults={searchResults} setSelected={setSelectedWeapon}/> } />
-        <Route path="/" render={() => <HomePage weapon={randomWeapon} /> } />
-        <Redirect from="*" to="/" />
+        <Route exact path="/all-weapons" render={() => <WeaponsPage allWeapons={allWeapons} searchResults={searchResults} setSelected={setSelectedWeapon}/> } />
+        <Route exact path="/home" render={() => <HomePage weapon={randomWeapon} /> } />
+        <Redirect from="*" to="/home" />
       </Switch>
     </main>
   )
