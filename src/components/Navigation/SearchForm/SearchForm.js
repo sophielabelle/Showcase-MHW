@@ -5,7 +5,7 @@ export const SearchForm = () => {
   return (
     <form className="search-container">
       <input 
-        className="search-bard"
+        className="search-bar"
         type="text"
         placeholder="search armor..."
         // value=""

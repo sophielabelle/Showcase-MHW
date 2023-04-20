@@ -13,34 +13,22 @@ export const App = () => {
   const [selectedWeapon, setSelectedWeapon] = useState({});
   // const [loading, setLoading] = useState(true)
 
-  const randomNum = () => {
-    return Math.floor(Math.random() * (1000 - 1 + 1) + 1)
-  }
-  
-  const fetchRandomWeapon = () => {
-    const rndInt = randomNum();
-    fetchData(`weapons/${rndInt}`)
-      .then(data => {
-        setRandomWeapon(data);
-      })
-      .catch(err => {
-        console.log('error',err.message);
-      })
+  const randomNum = (array) => {
+    return Math.floor(Math.random() * array.length)
   }
 
   const fetchAllWeapons = () => {
     fetchData('weapons')
       .then(data => {
+        const ranInt = randomNum(data)
         setAllWeapons(data)
+        setRandomWeapon(data[ranInt])
       })
       .catch(err => {
         console.log('error',err.message)
       })
+    
   }
-
-  useEffect(() => {
-    fetchRandomWeapon()
-  }, [])
 
   useEffect(() => {
     fetchAllWeapons()
