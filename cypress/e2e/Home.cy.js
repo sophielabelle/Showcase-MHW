@@ -14,4 +14,13 @@ describe('Home Page', () => {
   it('Should display a random weapon image on page load', () => {
     cy.get('.random-weapon').find('img').should('have.attr', 'src').should('contain', 'https://assets.mhw-db.com/weapons/great-sword/83f7ab6e7e5669ec416d772049b8b054e2624c2e.c7bad811e203c9bb55626e414659a4f7.png')
   })
+
+  it('Should have a navigation bar at the top of the screen with a search bar, buttons and title', () => {
+    cy.get('nav').find('.search-bar')
+    cy.get('h1').contains('Monster Hunter World Weapon Wiki')
+    cy.get(':nth-child(1) > .nav-btn')
+    cy.get('[href="/all-weapons"] > .nav-btn')
+    cy.get(':nth-child(3) > .nav-btn')
+  })
+
 })
