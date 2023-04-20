@@ -2,8 +2,9 @@ import React from "react";
 import "./SingleWeapon.css";
 
 export const SingleWeapon = ({selected}) => {
-  console.log(selected.durability)
-  // "attack": {...},
+  console.log(selected)
+  console.log(selected)
+
   // "elderseal": null,
   // "attributes": {...},
   // "damageType": "sever",
@@ -24,7 +25,7 @@ export const SingleWeapon = ({selected}) => {
     <section className="single-weapon">
       <h2>{selected.name}</h2>
       <img className="selected-img" src={selected.assets.image}/>
-      <p>Type : {selected.type} | Rarity : {selected.rarity}</p>
+      <p>Type : {selected.type} | Rarity : {selected.rarity} | Dameage Type : {selected.damageType}</p>
       <table className="durability">
         <tr>
           <td className="color-1" style={{width: `${color1}px`}}></td>
