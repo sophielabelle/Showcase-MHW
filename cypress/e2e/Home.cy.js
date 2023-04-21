@@ -16,11 +16,8 @@ describe('Home Page', () => {
   })
 
   it('Should have a navigation bar at the top of the screen with a search bar, buttons and title', () => {
-    cy.get('nav').find('.search-bar')
     cy.get('h1').contains('Monster Hunter World Weapon Wiki')
-    cy.get(':nth-child(1) > .nav-btn')
-    cy.get('[href="/all-weapons"] > .nav-btn')
-    cy.get(':nth-child(3) > .nav-btn')
+    cy.get('[href="/all-weapons"] > .nav-btn').contains('All Weapons')
+    cy.get('[href="/favorite-weapons"] > .nav-btn').contains('Favorite Weapons')
   })
-
 })
