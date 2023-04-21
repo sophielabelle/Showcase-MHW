@@ -3,17 +3,20 @@ import "./SearchForm.css"
 
 export const SearchForm = ({allWeapons, setSearchResults}) => {
   const [searchText, setSearchText] = useState('')
+
   const getSearchRes = () => {
-    const filteredWeapons = allWeapons.filter(weapon => {
-      const weaponName = weapon.name.toLowerCase();
-      const searchName = searchText.toLowerCase();
-      if(weaponName.includes(searchName)){
-        return true
-      } else {
-        return false
-      }
-    })
-    setSearchResults(filteredWeapons)
+    if(searchText.length){
+      const filteredWeapons = allWeapons.filter(weapon => {
+        const weaponName = weapon.name.toLowerCase();
+        const searchName = searchText.toLowerCase();
+        if(weaponName.includes(searchName)){
+          return true
+        } else {
+          return false
+        }
+      })
+      setSearchResults(filteredWeapons)
+    }
   }
 
   useEffect(() => {

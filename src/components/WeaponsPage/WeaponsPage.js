@@ -1,10 +1,10 @@
 import React from "react";
 import { WeaponType } from "./WeaponType/WeaponType";
-import "./WeaponsPage.css";
 import { WeaponCard } from "./WeaponType/WeaponCard/WeaponCard";
+import "./WeaponsPage.css";
 
-export const WeaponsPage = ({allWeapons, searchResults, setSelected}) => {
-  console.log(searchResults)
+export const WeaponsPage = ({allWeapons, searchResults, setSelected, searchText}) => {
+  console.log('searched results', searchResults)
   const weaponSections = allWeapons.reduce((acc, weapon) => {
     if(acc[weapon.type]){
       acc[weapon.type].push(weapon)
@@ -25,11 +25,13 @@ export const WeaponsPage = ({allWeapons, searchResults, setSelected}) => {
       </section>
     )
   } else {
-    const searchedTypes = searchResults.map(weapon => <WeaponCard weapon={weapon}/>)
+    const searchedTypes = searchResults.length ? searchResults.map(weapon => <WeaponCard key={weapon.id} weapon={weapon} setSelected={setSelected}/>) : <h3> We're sorry there are no weapons matching your search! </h3>
     return (
       <section className="weapons-page">
-        <h2>All MHW Weapons</h2>
-        {searchedTypes}
+        <h2>Search Results</h2>
+        <div className="search-results">
+          {searchedTypes}
+        </div>
       </section>
     )
   }
