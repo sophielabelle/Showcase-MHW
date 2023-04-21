@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./WeaponCard.css";
+import { useEffect } from "react";
 
 export const WeaponCard = ({weapon, setSelected}) => {
   const icon = weapon.assets === null ? null : weapon.assets.icon
