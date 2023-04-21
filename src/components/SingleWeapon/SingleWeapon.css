@@ -2,18 +2,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #222222;
-  min-height: 100vh;
-  margin: 30px;
-  margin-top: 100px;
+  background-color: #222222d1;
+  border-radius: 30px ;
+  margin-top: 15vh;
   padding: 20px;
+  height: 80vh;
+  width: 90vw;
 }
 
 .selected-img {
   height: 35vh;
-  background-color: #a4a0a060;
+  background-color: #222222;
   border-radius: 30%;
   box-shadow: 0px 1px 9px #e4d285;
+  margin: 5%;
+}
+
+.single-weapon > p {
+  margin: 1.5%;
+}
+
+.single-weapon > div > p {
+  margin: 2%;
+  width: fit-content;
 }
 
 .durability {
@@ -23,9 +34,6 @@
   border-spacing: 1px;
   border: 1px solid #e4d285;
   border-radius: 5px;
-}
-.color-1, .color-2, .color-3, .color-4, .color-5, .color-6, .color-7 {
-  padding: 0;
 }
 
 .color-1 {

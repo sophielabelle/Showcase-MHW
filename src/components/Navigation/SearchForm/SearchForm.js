@@ -4,7 +4,7 @@ import "./SearchForm.css";
 export const SearchForm = ({allWeapons, setSearchResults, searchText, setSearchText}) => {
 
   const getSearchRes = (event) => {
-    event.preventDefault()
+    // event.preventDefault()
     if(searchText.length){
       const filteredWeapons = allWeapons.filter(weapon => {
         const weaponName = weapon.name.toLowerCase();
@@ -19,9 +19,9 @@ export const SearchForm = ({allWeapons, setSearchResults, searchText, setSearchT
     }
   }
 
-  // useEffect(() => {
-  //   getSearchRes()
-  // }, [searchText])
+  useEffect(() => {
+    getSearchRes()
+  }, [searchText])
 
   return (
     <form className="search-container">
@@ -33,7 +33,6 @@ export const SearchForm = ({allWeapons, setSearchResults, searchText, setSearchT
         value={searchText}
         onChange={event => setSearchText(event.target.value)}
       />
-      <button className="nav-btn" onClick={(event) => getSearchRes(event)}>Search</button>
     </form>
   )
 }
