@@ -3,11 +3,11 @@ import { SearchForm } from "./SearchForm/SearchForm";
 import { NavLink, useLocation } from "react-router-dom";
 import "./Navigation.css";
 
-export const Navigation = ({allWeapons, setSearchResults}) => {
+export const Navigation = ({allWeapons, setSearchResults, searchText, setSearchText}) => {
   const location = useLocation()
   const showHome = location.pathname !== "/home" ? <button className="nav-btn">Home</button> : <button className="nav-btn hidden">Home</button>
   const showWeapons = location.pathname !== "/all-weapons" ? <button className="nav-btn">All Weapons</button> : <button className="nav-btn hidden">All Weapons</button>
-  const showSearchBar = location.pathname === "/all-weapons" ? <SearchForm allWeapons={allWeapons} setSearchResults={setSearchResults}/> : null
+  const showSearchBar = location.pathname === "/all-weapons" ? <SearchForm allWeapons={allWeapons} setSearchResults={setSearchResults} searchText={searchText} setSearchText={setSearchText}/> : null
 
   return (
     <nav>
@@ -22,9 +22,9 @@ export const Navigation = ({allWeapons, setSearchResults}) => {
         <NavLink to="/all-weapons">
           {showWeapons}
         </NavLink>
-        <NavLink to="/favorite-weapons">
+        {/* <NavLink to="/favorite-weapons">
           <button className="nav-btn">Favorite Weapons</button>
-        </NavLink>
+        </NavLink> */}
       </div>
     </nav>
   )
