@@ -3,19 +3,29 @@
   justify-content: space-evenly;
   flex-direction: row;
   align-items: center;
-  background-color: #222222;
-  min-height: 100vh;
-  margin-top: 100px;
-  margin: 30px;
+  border-radius: 1.5em;
+  margin-top: 12vh;
   padding: 20px;
+  background-color: #222222d1;
+  height: 80vh;
+  width: 90vw;
 }
 
-.home-instructions {
+.home-instructions, .random-weapon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   border: 2px solid rgb(255, 179, 0);
   border-radius: 0 20px 0 20px;
-  padding: 5px;
+  background-color: #222222;
+  padding: 1%;
   height: 50%;
   width: 300px;
+}
+
+.random-weapon > p {
+  font-size: 1.5em;
 }
 
 p {

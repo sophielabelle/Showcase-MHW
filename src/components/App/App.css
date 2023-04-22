@@ -1,7 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,700&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+body, html {
+  margin: 0;
+  height: 100vh;
+  overflow-x: hidden;
+}
 
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: max-content; */
   min-height: 100vh;
-  background-color: rgba(43, 14, 70, 0.459);
+  width: 100vw;
+  background-image: url('mhw-background.png') ;
+  background-repeat:repeat-x;
+  background-attachment:fixed;
+  background-position: left top;
+  position: absolute;
+}
+
+.hidden {
+  display: none;
 }

@@ -2,14 +2,14 @@ import React from "react";
 import { WeaponCard } from "./WeaponCard/WeaponCard";
 import "./WeaponType.css";
 
-export const WeaponType = ({name, typeOfWeapons, setSelected}) => {
-  const weaponCards = typeOfWeapons.map(weapon => <WeaponCard key={weapon.name} weapon={weapon} setSelected={setSelected}/>)
+export const WeaponType = ({sectionName, typeOfWeapons, setSelected}) => {
+  const weaponCards = typeOfWeapons.map(weapon => <WeaponCard key={weapon.id} weapon={weapon} setSelected={setSelected}/>)
   const display = weaponCards.length ? <div className="weapon-cards">{weaponCards}</div> : <h3>Loading...</h3>
-  const displayType = name.replaceAll('-', ' ').toUpperCase()
+  const displayName = sectionName.replaceAll('-', ' ').toUpperCase()
 
   return (
     <section className="weapon-type-categories">
-      <h3>{displayType}</h3>
+      <h3>{displayName}</h3>
       {display}
     </section>
   )

@@ -1,13 +1,14 @@
 .weapon-card {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   border: 2px solid #e4d285;
   background-color: #222222;
   box-shadow: 2px 2px 5px black;
   height: 100px;
   width: 30%;
+  min-width: 276px;
   margin: 10px;
   border-radius: 0 20px 0 20px;
 }
@@ -19,18 +20,29 @@
 .weapon-name {
   font-family: 'Noto Serif', serif;
   color: #999999;
-  font-size: larger;
+  font-size: 1.05em;
+  text-align: center;
 }
 
 .select-btn {
-  border: none;
-  border-radius: 5px;
+  border: 2px solid #7e7b7b;
+  border-radius: 0.5em;
+  margin: 1.01em;
+  padding: .15em;
+  font-size: larger;
+  color: #e4d285;
+  background-color: #514f4f;
+  height: min-content;
   width: min-content;
-  height: 40px;
-  color: #999999;
-  font-size: 1.05em;
-  background-color: #222222;
-  box-shadow: 1px 1px 2px 1px #e4d285;
-  margin: 10px;
-  cursor: pointer;
+  transition: 0.5s;
+}
+
+.select-btn:hover {
+  border: 2px solid #e4d285;
+}
+
+.select-btn:active {
+  scale: 1.05;
+  color: #514f4f;
+  background-color: #e4d285;
 }

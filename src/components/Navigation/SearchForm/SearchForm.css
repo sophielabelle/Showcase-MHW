@@ -1,5 +1,18 @@
 .search-container {
+  display: flex;
+  align-items: center;
   position: fixed;
   top: 10px;
   left: 10px;
+}
+
+.search-bar {
+  border: 2px solid #7e7b7b;
+  border-radius: 0.5em;
+  font-size: 1.05em;
+  height: 30px;
+}
+
+.search-bar:hover {
+  border: 2px solid #e4d285;
 }
