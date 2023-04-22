@@ -13,7 +13,7 @@
 .selected-img {
   height: 35vh;
   background-color: #222222;
-  border-radius: 30%;
+  border-radius: 3em;
   box-shadow: 0px 1px 9px #e4d285;
   margin: 5%;
 }
@@ -24,7 +24,6 @@
 
 .single-weapon > div > p {
   margin: 2%;
-  width: fit-content;
 }
 
 .durability {

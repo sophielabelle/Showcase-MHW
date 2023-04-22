@@ -1,46 +1,40 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { cleanWeaponData } from "../../data/utilCleanup";
 import "./SingleWeapon.css";
 
 export const SingleWeapon = ({selected}) => {
-  // "elderseal": null,
-  // "attributes": {...},
-  // "damageType": "sever",
-  // "slots": [...],
-  // "elements": [...],
-  // "crafting": {...},
-  const hasKeys = Object.keys(selected)
+  const cleanWeapon = cleanWeaponData(selected)
+  console.log('cleanData', cleanWeapon)
+  console.log('elms',cleanWeapon.elements)
+  console.log('elder', cleanWeapon.elderseal)
+  console.log('att', cleanWeapon.attributes)
+  
+  const hasKeys = Object.keys(cleanWeapon)
   if(hasKeys.length){
-    console.log(selected)
-    const durability = selected.durability[0]
-    const color1 = durability.red / 300 * 100
-    const color2 = durability.orange / 300 * 100
-    const color3 = durability.yellow / 300 * 100
-    const color4 = durability.green / 300 * 100
-    const color5 = durability.blue / 300 * 100
-    const color6 = durability.white / 300 * 100
-    const color7 = durability.purple / 300 * 100
-    
     return (
       <section className="single-weapon">
-        <h2>{selected.name}</h2>
-        <img className="selected-img" src={selected.assets.image}/>
-        <p>Type : {selected.type} | Rarity : {selected.rarity} | Dameage Type : {selected.damageType}</p>
+        <h2>{cleanWeapon.name}</h2>
+        <img className="selected-img" src={cleanWeapon.assets.image}/>
+        <p className="weapon-description">Type : {cleanWeapon.type} | Rarity : {cleanWeapon.rarity} | Primary Damage Type : {cleanWeapon.damageType}</p>
+        <p>Base Weapon Sharpness Level</p>
         <table className="durability">
           <tbody>
             <tr>
-              <td className="color-1" style={{width: `${color1}px`}}></td>
-              <td className="color-2" style={{width: `${color2}px`}}></td>
-              <td className="color-3" style={{width: `${color3}px`}}></td>
-              <td className="color-4" style={{width: `${color4}px`}}></td>
-              <td className="color-5" style={{width: `${color5}px`}}></td>
-              <td className="color-6" style={{width: `${color6}px`}}></td>
-              <td className="color-7" style={{width: `${color7}px`}}></td>
+              <td className="color-1" style={{width: `${cleanWeapon.durability.col1}px`}}></td>
+              <td className="color-2" style={{width: `${cleanWeapon.durability.col2}px`}}></td>
+              <td className="color-3" style={{width: `${cleanWeapon.durability.col3}px`}}></td>
+              <td className="color-4" style={{width: `${cleanWeapon.durability.col4}px`}}></td>
+              <td className="color-5" style={{width: `${cleanWeapon.durability.col5}px`}}></td>
+              <td className="color-6" style={{width: `${cleanWeapon.durability.col6}px`}}></td>
+              <td className="color-7" style={{width: `${cleanWeapon.durability.col7}px`}}></td>
             </tr>
           </tbody>
         </table>
         <div>
-          <p>Attack stats: Display {selected.attack.display}, Raw {selected.attack.raw} </p>
+          <p className="weapon-description">The {cleanWeapon.name} has an attack base stat of {cleanWeapon.attack.display} and the main damage type is {cleanWeapon.damageType}. 
+          {/* {cleanWeapon.elements} {cleanWeapon.elderseal} {cleanWeapon.attributes} */}
+          </p>
         </div>
       </section>
     )
