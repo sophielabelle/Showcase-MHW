@@ -39,7 +39,7 @@ export const SingleWeapon = ({selected}) => {
     ) : (
       <section className="single-weapon">
         <div className="single-error">
-          <h2>Oh no an error occured! Please return to the previous page!</h2>
+          <h2>Oh no an error occured! Please return to view all the weapons to make a new selection!</h2>
           <NavLink to="/all-weapons">
             <button className="nav-btn">Return to All Weapons</button>
           </NavLink>

@@ -41,7 +41,7 @@ export const App = () => {
       <Switch>
         <Route exact path="/all-weapons/weapon/:id" render={({match}) => <SingleWeapon key={match.params.selectedWeapon} id={match.params.selectedWeapon} selected={selectedWeapon}/>} />
         <Route exact path="/all-weapons" render={() => <WeaponsPage allWeapons={allWeapons} searchText={searchText} searchResults={searchResults} setSelected={setSelectedWeapon}/> } />
-        <Route exact path="/home" render={() => <HomePage weapon={randomWeapon} /> } />
+        <Route exact path="/" render={() => <HomePage weapon={randomWeapon} setSelected={setSelectedWeapon} /> } />
         <Route render={() => <ErrorPage />} />
         <Redirect from="*" to="/error" />
       </Switch>

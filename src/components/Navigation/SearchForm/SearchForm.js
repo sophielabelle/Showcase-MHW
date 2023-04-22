@@ -4,7 +4,6 @@ import "./SearchForm.css";
 export const SearchForm = ({allWeapons, setSearchResults, searchText, setSearchText}) => {
 
   const getSearchRes = (event) => {
-    // event.preventDefault()
     if(searchText.length){
       const filteredWeapons = allWeapons.filter(weapon => {
         const weaponName = weapon.name.toLowerCase();
