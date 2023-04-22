@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "./RandomWeapon.css";
 
 export const RandomWeapon = ({weapon, setSelected}) => {
   const display = weapon.id ? 
