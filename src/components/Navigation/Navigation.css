@@ -52,3 +52,42 @@ h1:hover {
   color: #514f4f;
   background-color: #e4d285;
 }
+
+.home-logo {
+  display: none;
+}
+
+@media screen and (max-width: 52em) {
+  nav {
+    background-color: black;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  .home-logo {
+    display: inline;
+    height: 10em;
+  }
+
+  .nav-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    right: 10px;
+  }
+
+  .nav-btn {
+    border: 2px solid #7e7b7b;
+    border-radius: 0.5em;
+    margin: 0.15em;
+    padding: .15em;
+    font-size: .85em;
+    color: #e4d285;
+    background-color: #514f4f;
+    height: 30px;
+    width: fit-content;
+    transition: 0.5s;
+  }
+} 
