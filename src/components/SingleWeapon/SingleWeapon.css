@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  row-gap: 1.0em;
   background-color: #222222d1;
-  border-radius: 30px ;
+  border-radius: 2em;
   margin-top: 15vh;
   padding: 20px;
   height: 80vh;
@@ -13,17 +14,28 @@
 .selected-img {
   height: 35vh;
   background-color: #222222;
-  border-radius: 3em;
-  box-shadow: 0px 1px 9px #e4d285;
-  margin: 5%;
+  border-radius: 1em;
+  box-shadow: 0px 1px 7px #e4d285;
 }
 
-.single-weapon > p {
-  margin: 1.5%;
+.weapon-description, .sharpness-container, .single-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.single-weapon > div > p {
-  margin: 2%;
+.weapon-description {
+  row-gap: 1.0em;
+  height: 20vh;
+  width: 80%;
+  border-radius: 1em;
+  padding: 3.5%;
+  box-shadow: 0px 1px 7px #e4d285;
+  background-color: #222222;
+}
+
+.weapon-description > p, .sharpness-container > p {
+  font-size: 1.25em;
 }
 
 .durability {
@@ -61,4 +73,13 @@ background-color: #be3843;
 
 .color-7 {
   background-color: rgb(159, 0, 159);
+}
+
+.single-error {
+  justify-content: space-around;
+  margin-top: 10%;
+  width: 100%;
+  height: 30%;
+  background-color: #f856566e;
+  border-radius: 2em;
 }
