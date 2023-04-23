@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./WeaponCard.css";
 
 export const WeaponCard = ({weapon, setSelected}) => {
@@ -15,4 +16,9 @@ export const WeaponCard = ({weapon, setSelected}) => {
       </Link>
     </div>
   )
+}
+
+WeaponCard.propTypes = {
+  weapon: PropTypes.object,
+  setSelected: PropTypes.func
 }

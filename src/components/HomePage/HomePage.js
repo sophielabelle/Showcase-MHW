@@ -1,6 +1,7 @@
 import React from "react";
 import { RandomWeapon } from "./RandomWeapon/RandomWeapon";
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./HomePage.css";
 
 export const HomePage = ({weapon, setSelected, errMessage}) => {
@@ -18,4 +19,10 @@ export const HomePage = ({weapon, setSelected, errMessage}) => {
       </NavLink>
     </section>
   );
+}
+
+HomePage.propTypes = {
+  weapon: PropTypes.object,
+  setSelected: PropTypes.func,
+  errMessage: PropTypes.string
 }

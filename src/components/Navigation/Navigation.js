@@ -1,6 +1,7 @@
 import React from "react";
 import { SearchForm } from "./SearchForm/SearchForm";
 import { NavLink, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./Navigation.css";
 import "../App/site-home-logo.png";
 
@@ -27,4 +28,11 @@ export const Navigation = ({allWeapons, setSearchResults, searchText, setSearchT
       </div>
     </nav>
   )
+}
+
+Navigation.propTypes = {
+  allWeapons: PropTypes.array, 
+  setSearchResults: PropTypes.func,
+  searchText: PropTypes.string, 
+  setSearchText: PropTypes.func
 }
