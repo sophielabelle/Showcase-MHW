@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { cleanWeaponData } from "../../data/utilCleanup";
+import PropTypes from "prop-types";
 import "./SingleWeapon.css";
 
 export const SingleWeapon = ({selected}) => {
@@ -52,4 +53,8 @@ export const SingleWeapon = ({selected}) => {
       {display}
     </>
   );
+}
+
+SingleWeapon.propTypes = {
+  SingleWeapon: PropTypes.object
 }

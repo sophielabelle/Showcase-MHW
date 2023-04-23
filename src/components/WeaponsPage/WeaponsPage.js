@@ -2,6 +2,7 @@ import React from "react";
 import { WeaponType } from "./WeaponType/WeaponType";
 import { WeaponCard } from "./WeaponType/WeaponCard/WeaponCard";
 import { ErrorPage } from "../ErrorPage/ErrorPage";
+import PropTypes from "prop-types";
 import "./WeaponsPage.css";
 
 export const WeaponsPage = ({allWeapons, searchText, searchResults, setSelected, errMessage}) => {
@@ -42,4 +43,12 @@ export const WeaponsPage = ({allWeapons, searchText, searchResults, setSelected,
       </section>
     );
   }
+}
+
+WeaponsPage.propTypes = {
+  allWeapons: PropTypes.array, 
+  searchText: PropTypes.string, 
+  searchResults: PropTypes.array, 
+  setSelected: PropTypes.func, 
+  errMessage: PropTypes.string
 }

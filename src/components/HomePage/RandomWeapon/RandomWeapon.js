@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types"
 
 export const RandomWeapon = ({weapon, setSelected, errMessage}) => {
   const errText = errMessage.length ? <p>{errMessage}</p> : <p>Loading...</p>
@@ -21,4 +22,10 @@ export const RandomWeapon = ({weapon, setSelected, errMessage}) => {
       {display}
     </>
   );
+}
+
+RandomWeapon.propTypes = {
+  weapon: PropTypes.object,
+  setSelected: PropTypes.func,
+  errMessage: PropTypes.string
 }

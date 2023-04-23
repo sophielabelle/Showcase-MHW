@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import "./SearchForm.css";
 
 export const SearchForm = ({allWeapons, setSearchResults, searchText, setSearchText}) => {
@@ -34,4 +35,11 @@ export const SearchForm = ({allWeapons, setSearchResults, searchText, setSearchT
       />
     </form>
   );
+}
+
+SearchForm.propTypes = {
+  allWeapons: PropTypes.array, 
+  setSearchResults: PropTypes.func,
+  searchText: PropTypes.string, 
+  setSearchText: PropTypes.func
 }
