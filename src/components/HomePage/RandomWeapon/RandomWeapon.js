@@ -1,7 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { ErrorPage } from "../../ErrorPage/ErrorPage";
 
-export const RandomWeapon = ({weapon, setSelected}) => {
+export const RandomWeapon = ({weapon, setSelected, errMessage}) => {
+  const errText = errMessage.length ? <p>{errMessage}</p>  : <p>Loading...</p>
+
   const display = weapon.id ? 
   <div className="random-weapon">
     <img src={weapon.assets.image} alt={`${weapon.name} Monster Hunter Weapon`} /> 
@@ -13,7 +16,7 @@ export const RandomWeapon = ({weapon, setSelected}) => {
     </NavLink>
   </div> : 
   <div className="random-weapon">
-    <p>Loading...</p>
+    {errText}
   </div>
 
   return (
