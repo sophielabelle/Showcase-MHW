@@ -21,7 +21,7 @@ export const App = () => {
   }
 
   const fetchAllWeapons = () => {
-    fetchData('weaons')
+    fetchData('weapons')
       .then(data => {
         const ranInt = randomNum(data);
         setAllWeapons(data);
