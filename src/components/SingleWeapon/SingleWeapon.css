@@ -12,9 +12,9 @@
 }
 
 .selected-img {
+  border-radius: 1em;
   height: 35vh;
   background-color: #222222;
-  border-radius: 1em;
   box-shadow: 0px 1px 7px #e4d285;
 }
 

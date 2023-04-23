@@ -4,8 +4,8 @@ import { cleanWeaponData } from "../../data/utilCleanup";
 import "./SingleWeapon.css";
 
 export const SingleWeapon = ({selected}) => {
-  const cleanWeapon = cleanWeaponData(selected)
-  const hasKeys = Object.keys(cleanWeapon)
+  const cleanWeapon = cleanWeaponData(selected);
+  const hasKeys = Object.keys(cleanWeapon);
   
   const display = hasKeys.length ?
     (
@@ -45,11 +45,11 @@ export const SingleWeapon = ({selected}) => {
           </NavLink>
         </div>
       </section>
-    )
+    );
   
   return (
     <>
       {display}
     </>
-  )
+  );
 }

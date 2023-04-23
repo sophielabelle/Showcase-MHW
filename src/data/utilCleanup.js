@@ -1,17 +1,16 @@
 import  "./default-icon.png";
 
 export const cleanWeaponData = (weapon) => {
-  console.log(weapon.attack)
   if(Object.keys(weapon).length) {
     // Type and Damage Type -----------------------------------------
-    const type = weapon.type.replaceAll('-', ' ')
-    const damageType = weapon.damageType
+    const type = weapon.type.replaceAll('-', ' ');
+    const damageType = weapon.damageType;
 
     // Elderseal ----------------------------------------------------
-    const elderseal = weapon.elderseal ? weapon.elderseal : 'n/a'
+    const elderseal = weapon.elderseal ? weapon.elderseal : 'n/a';
     
     // Attributes ---------------------------------------------------
-    const attKeys =  Object.keys(weapon.attributes)
+    const attKeys =  Object.keys(weapon.attributes);
     const attributes = attKeys.length  ? attKeys[0] : 'n/a';
     
     // Durability ---------------------------------------------------
@@ -61,5 +60,5 @@ export const cleanWeaponData = (weapon) => {
     };
   } else {
     return {};
-  }
+  };
 }

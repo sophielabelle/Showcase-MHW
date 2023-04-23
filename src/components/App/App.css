@@ -23,7 +23,7 @@ body, html {
   justify-content: center;
   min-height: 100vh;
   width: 100vw;
-  background-image: url('mhw-background.png') ;
+  background-image: url('mhw-background.png');
   background-repeat:repeat-x;
   background-attachment:fixed;
   background-position: left top;

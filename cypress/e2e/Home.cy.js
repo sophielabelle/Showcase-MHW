@@ -8,7 +8,7 @@ describe('Home Page', () => {
 
   it('Should display a welcome introduction message', () => {
     cy.get('.home-instructions').find('h2').should('contain', 'Thanks for Stopping by!')
-    cy.get('.home-instructions').find('p').contains('Welcome I created this site in order to provide you a space to learn and keep track of all the weapons that are availabel within Monster Hunter World. You can reasearch armors you are interested in, search through all of them and maybe eventually save them. Have a look around and keep on playing.')
+    cy.get('.home-instructions').find('p').contains('This site was created in order to provide a space to learn and keep track of all the weapons available within Monster Hunter World. They are all viewable on the All Weapons page and can be searched if there is a perticular one you are interested in. Each weapon card can be clicked on to view more in depth details. Have a look around and keep on playing!')
   })
 
   it('Should display a random weapon image on page load with a button to access its details and its name', () => {

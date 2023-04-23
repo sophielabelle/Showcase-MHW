@@ -3,7 +3,7 @@ import "./SearchForm.css";
 
 export const SearchForm = ({allWeapons, setSearchResults, searchText, setSearchText}) => {
 
-  const getSearchRes = (event) => {
+  const getSearchRes = () => {
     if(searchText.length){
       const filteredWeapons = allWeapons.filter(weapon => {
         const weaponName = weapon.name.toLowerCase();
@@ -13,14 +13,14 @@ export const SearchForm = ({allWeapons, setSearchResults, searchText, setSearchT
         } else {
           return false;
         }
-      })
+      });
       setSearchResults(filteredWeapons);
     }
   }
 
   useEffect(() => {
-    getSearchRes()
-  }, [searchText])
+    getSearchRes();
+  }, [searchText]);
 
   return (
     <form className="search-container">
@@ -33,5 +33,5 @@ export const SearchForm = ({allWeapons, setSearchResults, searchText, setSearchT
         onChange={event => setSearchText(event.target.value)}
       />
     </form>
-  )
+  );
 }

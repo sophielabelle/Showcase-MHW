@@ -6,9 +6,9 @@ nav {
   border-bottom: 2px solid #e4d285;
   position: fixed;
   min-height: 100px;
+  top: 0;
   height: 12vh;
   width: 100vw;
-  top: 0;
   color: #999999;
 }
 

@@ -4,13 +4,13 @@
   justify-content: space-between;
   align-items: center;
   border: 2px solid #e4d285;
-  background-color: #222222;
+  border-radius: 0 20px 0 20px;
+  margin: 10px;
   box-shadow: 2px 2px 5px black;
   height: 100px;
   width: 30%;
   min-width: 276px;
-  margin: 10px;
-  border-radius: 0 20px 0 20px;
+  background-color: #222222;
 }
 
 .icon {
@@ -30,10 +30,10 @@
   margin: 1.01em;
   padding: .15em;
   font-size: larger;
-  color: #e4d285;
-  background-color: #514f4f;
   height: min-content;
   width: min-content;
+  color: #e4d285;
+  background-color: #514f4f;
   transition: 0.5s;
 }
 
