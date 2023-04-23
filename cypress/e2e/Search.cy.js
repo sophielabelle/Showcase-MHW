@@ -3,21 +3,24 @@ describe('Search Bar', () => {
     cy.intercept('GET', 'https://mhw-db.com/weapons', {
       fixture: "allWeapons.json"
     })
-    cy.visit('http://localhost:3000/')
-    cy.get('[href="/all-weapons"] > .nav-btn').click()
-    cy.visit('http://localhost:3000/all-weapons')
+    cy.visit('https://monsterhunterworldweaponwiki.vercel.app/')
+    cy.get('.nav-btns > [href="/all-weapons"] > .nav-btn').click()
+    cy.visit('https://monsterhunterworldweaponwiki.vercel.app/all-weapons')
   })
 
-  it('Should have a search bar now in the nav bar', () => {
-    cy.get('.search-bar').name('Search Bar')
+  it('Should have a search box in the nav bar', () => {
+    cy.get('nav').find('.search-bar')
   })
 
-  it('Should display a random weapon image on page load', () => {
-    
+  it('Should allow the user to search for different weapons', () => {
+    cy.get('.search-bar').type('Buster')
+    cy.get('h2').contains('Search Results')
+    cy.get('.search-results > :nth-child(1)').find('.weapon-name').contains('Buster Sword 1')
+    cy.get('.search-results > :nth-child(2)').find('.weapon-name').contains('Buster Gun Lance 1')
   })
 
-  it('Should have a navigation bar at the top of the screen with a search bar, buttons and title', () => {
-  
+  it('Should show an error message when nothing matches the search', () => {
+    cy.get('.search-bar').type('sadf 6678')
+    cy.get('h3').contains(`We're sorry there are no weapons matching your search!`)
   })
-
 })
