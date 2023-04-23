@@ -17,10 +17,10 @@ export const WeaponsPage = ({allWeapons, searchText, searchResults, setSelected,
       acc[weapon.type] = [weapon]
     }
     return acc;
-  }, {})
+  }, {});
   
-  const keys = Object.keys(weaponSections)
-  const types = keys.map(key => <WeaponType key={key} sectionName={key} typeOfWeapons={weaponSections[key]} setSelected={setSelected} />)
+  const keys = Object.keys(weaponSections);
+  const types = keys.map(key => <WeaponType key={key} sectionName={key} typeOfWeapons={weaponSections[key]} setSelected={setSelected} />);
   const display = types.length ? <div className="weapon-types">{types}</div> : errText
   
   if(!searchText.length){
@@ -29,7 +29,7 @@ export const WeaponsPage = ({allWeapons, searchText, searchResults, setSelected,
         <h2>All MHW Weapons</h2>
         {display}
       </section>
-    )
+    );
   } else if(searchText.length) {
     const searchedTypes = searchResults.length  ? searchResults.map(weapon => <WeaponCard key={weapon.id} weapon={weapon} setSelected={setSelected}/>) : <h3> We're sorry there are no weapons matching your search! </h3>
     
@@ -40,6 +40,6 @@ export const WeaponsPage = ({allWeapons, searchText, searchResults, setSelected,
           {searchedTypes}
         </div>
       </section>
-    )
+    );
   }
 }

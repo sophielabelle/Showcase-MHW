@@ -9,7 +9,7 @@ export const HomePage = ({weapon, setSelected, errMessage}) => {
       <div className="home-page-boxes">
         <div className="home-instructions">
           <h2>Thanks for Stopping by!</h2>
-          <p>Welcome I created this site in order to provide you a space to learn and keep track of all the weapons that are availabel within Monster Hunter World. You can reasearch armors you are interested in, search through all of them and maybe eventually save them. Have a look around and keep on playing.</p>
+          <p>This site was created in order to provide a space to learn and keep track of all the weapons available within Monster Hunter World. They are all viewable on the All Weapons page and can be searched if there is a perticular one you are interested in. Each weapon card can be clicked on to view more in depth details. Have a look around and keep on playing!</p>
         </div>
         <RandomWeapon weapon={weapon} setSelected={setSelected} errMessage={errMessage} />
       </div>
@@ -17,5 +17,5 @@ export const HomePage = ({weapon, setSelected, errMessage}) => {
         <button className="nav-btn">View All Weapons</button>
       </NavLink>
     </section>
-  )
+  );
 }

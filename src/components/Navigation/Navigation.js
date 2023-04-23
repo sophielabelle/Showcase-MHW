@@ -5,7 +5,7 @@ import "./Navigation.css";
 import "../App/site-home-logo.png";
 
 export const Navigation = ({allWeapons, setSearchResults, searchText, setSearchText}) => {
-  const location = useLocation()
+  const location = useLocation();
   const showHome = location.pathname !== "/" ? <button className="nav-btn">Home</button> : <button className="nav-btn hidden">Home</button>
   const showWeapons = location.pathname !== "/all-weapons" ? <button className="nav-btn">All Weapons</button> : <button className="nav-btn hidden">All Weapons</button>
   const showSearchBar = location.pathname === "/all-weapons" ? <SearchForm allWeapons={allWeapons} setSearchResults={setSearchResults} searchText={searchText} setSearchText={setSearchText}/> : null

@@ -14,27 +14,27 @@ export const App = () => {
   const [selectedWeapon, setSelectedWeapon] = useState({});
   const [searchResults, setSearchResults] = useState([]);
   const [searchText, setSearchText] = useState('');
-  const [errMessage, setErrMessage] = useState('')
+  const [errMessage, setErrMessage] = useState('');
 
-  const randomNum = (array) => {
-    return Math.floor(Math.random() * array.length)
+  const randomNum = array => {
+    return Math.floor(Math.random() * array.length);
   }
 
   const fetchAllWeapons = () => {
     fetchData('weaons')
       .then(data => {
-        const ranInt = randomNum(data)
-        setAllWeapons(data)
-        setRandomWeapon(data[ranInt])
+        const ranInt = randomNum(data);
+        setAllWeapons(data);
+        setRandomWeapon(data[ranInt]);
       })
       .catch(err => {
-       setErrMessage(`We're sorry there was a ${err.message} error. Please try to reload the page`)
-      })
+       setErrMessage(`We're sorry there was a ${err.message} error. Please try to reload the page.`);
+      });
   }
 
   useEffect(() => {
-    fetchAllWeapons()
-  }, [])
+    fetchAllWeapons();
+  }, []);
 
   return (
     <main className="App">
@@ -47,5 +47,5 @@ export const App = () => {
         <Redirect from="*" to="/error" />
       </Switch>
     </main>
-  )
+  );
 }
