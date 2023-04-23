@@ -1,10 +1,15 @@
 import React from "react";
 import { WeaponType } from "./WeaponType/WeaponType";
 import { WeaponCard } from "./WeaponType/WeaponCard/WeaponCard";
+import { ErrorPage } from "../ErrorPage/ErrorPage";
 import "./WeaponsPage.css";
 
-export const WeaponsPage = ({allWeapons, searchText, searchResults, setSelected}) => {
-
+export const WeaponsPage = ({allWeapons, searchText, searchResults, setSelected, errMessage}) => {
+  const errText = errMessage.length ? 
+  <div>
+    <ErrorPage errMessage={errMessage}/>
+  </div>
+  : <h3>Loading...</h3>
   const weaponSections = allWeapons.reduce((acc, weapon) => {
     if(acc[weapon.type]){
       acc[weapon.type].push(weapon)
@@ -16,7 +21,7 @@ export const WeaponsPage = ({allWeapons, searchText, searchResults, setSelected}
   
   const keys = Object.keys(weaponSections)
   const types = keys.map(key => <WeaponType key={key} sectionName={key} typeOfWeapons={weaponSections[key]} setSelected={setSelected} />)
-  const display = types.length ? <div className="weapon-types">{types}</div> : <h3>Loading...</h3>
+  const display = types.length ? <div className="weapon-types">{types}</div> : errText
   
   if(!searchText.length){
     return (
