@@ -32,4 +32,13 @@ describe('Home Page', () => {
     cy.get('nav').find('h1').contains('Monster Hunter World Weapon Wiki')
     cy.get('.nav-btns > [href="/all-weapons"] > .nav-btn').contains('All Weapons')
   })
+
+  it('Should show an error message when the fetch is not working correctly', () => {
+    cy.intercept('GET', 'https://mhw-db.com/weapons', {
+      statusCode: 404
+    })
+    cy.get('.random-weapon > p').contains(`We're sorry there was a 404 error. Please try to reload the page.`)
+    cy.get('.nav-btns > [href="/all-weapons"] > .nav-btn').click()
+    cy.get('.error-page').contains(`We're sorry there was a 404 error. Please try to reload the page.`)
+  })
 })
