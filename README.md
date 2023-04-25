@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# [Monster Hunter World Weapon Wiki](https://monsterhunterworldweaponwiki.vercel.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Abstract
+Night at the Dawg Museum is an app for users who want to browse through pictures of dogs. The app allows a user to look through pictures of dogs on the main page. When the user want to narrow their search, they can go to the exhibit page where they can choose between five different breeds of dogs. Once they select one breed, they will be taken to a page where the they can browse many pictures of that one type of breed. The user can save the picture that they like and look at it later in the saved dog page. The user also has the option to delete pictures from they pictures that they've saved
 
-## Available Scripts
+***
 
-In the project directory, you can run:
+### Technologies Used:
+- JavaScript
+- HTML
+- CSS
+- JSX
+- React
+- Router
+- Cypress
 
-### `npm start`
+***
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation Instructions:
+1. Clone down a local copy of [the repository](git@github.com:sophielabelle/Showcase-MHW.git).
+2. `cd` into the repository and run `npm install`.
+3. You can open the project in your preferred text editor.
+4. To host the page on your local server run `npm start`.
+5. Or visit https://monsterhunterworldweaponwiki.vercel.app/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+***
 
-### `npm test`
+### Preview of App:
+![MH3W Showcase](https://user-images.githubusercontent.com/117314181/234180981-15641bb5-3959-491e-ac90-28db3d0f29c0.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+***
 
-### `npm run build`
+### Context:
+[Project Spec](https://frontend.turing.edu/projects/module-3/showcase.html)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Completed as part of the Turing School of Software Development 2211 FE Mod 3 curriculum
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Approximate hours to completion: 30
+***
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Contributors:
+- [Sophie LaBelle](https://github.com/sophielabelle)
+***
 
-### `npm run eject`
+### Learning Goals:
+- Demonstrate competency with React fundamentals 
+- Further learning how to test React components and UI state
+- Create an app that allows a user to easily flow between features in an intuitive way and find the information they are looking for
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+***
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Wins + Challenges:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Win:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- I was able to build this basic app that I feel solid on and have plans of expanding
+- Built dynamic components and clean code within 5 days and produced an app I am proud of
 
-## Learn More
+**Challenge:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- End to end cypress testing
+- Keeping on track with such a short timeline
