@@ -26,7 +26,7 @@ Night at the Dawg Museum is an app for users who want to browse through pictures
 ***
 
 ### Preview of App:
-![]()
+![MH3W Showcase](https://user-images.githubusercontent.com/117314181/234180981-15641bb5-3959-491e-ac90-28db3d0f29c0.gif)
 
 ***
 
